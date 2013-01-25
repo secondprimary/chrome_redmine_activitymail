@@ -41,7 +41,7 @@ function executeMailto(tab_id, subject, body, selection) {
 					//action_url += entrys[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
 					action_url += encodeURIComponent(ticketTitleValue + "\n\n");
 					//popup..?
-					document.body.appendChild(ticketTitleValue);
+					// document.body.appendChild(ticketTitleValue);
 					if (1000 < action_url.length) {
 						// max 1024.. ?
 						action_url.substring(0,1000);
