@@ -1,29 +1,69 @@
 <!DOCTYPE>
 <html>
 	<head>
-		<title>Options for the Send as Email extension</title>
+		<title>Redmine activity mail</title>
 		<style>
-			#providerSelection {
-			  font-family: Helvetica, Arial, sans-serif;
-			  font-size: 10pt;
+			body {
+				font-family: Helvetica, Arial, sans-serif;
+				font-size: 10pt;
+				color: #E1E0B2;
+				background-color: #141414;
+			}
+			a:link,
+			a:visited,
+			a:hover,
+			a:active {
+				color: #E1E0B2;
+			}
+			th {
+				text-align: left;
+			}
+			input[type=text] {
+				width: 250px;
+			}
+			#submit td {
+				text-align: right;
+			}
+			#submit td input[type=submit] {
+				margin-top: 20px;
+				font-size: 20px;
 			}
 		</style>
-		<script src="options.js"></script>
+		<script type="text/javascript" src="options.js"></script>
 	</head>
 	<body>
-		<table border="0">
-			<tr>
-				<td rowspan="2" valign="top" align="center" width="80">
-		    		<img src="mail_128x128.png" width="64" height="64" />
-				  </td>
-				  <td height="22"></td>
-			</tr>
-			<tr>
-				<td valign="center">
-					name : <input id="name" type="text" name="name" />
-					<input type="button" value="save" onclick="save();">
-				</td>
-			</tr>
-		</table>
+		<div>
+			<img src="animation.gif" width="60" height="60" style="float: left" />
+			<h2 style="float: left; color: F01616; margin-left: 10px;">REDMINE ACTIVITY</h2>
+			<img src="animation.gif" width="60" height="60" style="margin-left: 10px;" />
+		</div>
+		<form>
+			<table style="margin-top: 50px;">
+				<tr>
+					<th>Redmine server name</th>
+					<td><input type="text" name="servername" id="servername" required maxlength="50" /></td>
+				</tr>
+				<tr>
+					<th>Redmine context path</th>
+					<td><input type="text" name="contextpath" id="contextpath" required maxlength="50" /></td>
+				</tr>
+				<tr>
+					<th>Redmine userid</th>
+					<td><input type="text" name="userid" id="userid" required maxlength="20" /></td>
+				</tr>
+				<tr>
+					<th>Mail to address</th>
+					<td><input type="text" name="mailto" id="mailto" required maxlength="255" /></td>
+				</tr>
+				<tr>
+					<th>Connect test</th>
+					<td id="connecttest"></td>
+				</tr>
+				<tr id="submit">
+					<th>&nbsp;</th>
+					<td><input type="submit" value="Save" id="save"></td>
+				</tr>
+			</table>
+		</form>
 	</body>
 </html>
