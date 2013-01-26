@@ -40,6 +40,7 @@ function executeMailto(tab_id, subject, body, selection) {
 			var userfamilyname = usernames[usernames.length - 2];
 
 			// Activity
+			// フィードで取得できる件数は、http://redminedomain/redminecontextpath/settings/edit#フィード内容の上限 で変更可能
 			var activitys = "";
 			for (var i=0; i < entrys.length; i++) {
 				// get updated tag contents (ex: 2013-01-24T17:06:29+09:00
@@ -66,10 +67,6 @@ function executeMailto(tab_id, subject, body, selection) {
 				// clipboard copied because of the problems url maxlength 1024.
 				action_url += encodeURIComponent("Ctrl + v を押してください");
 				activitys = "【本日の作業内容】\n" + activitys
-				// TODO Get atom limit 15 .. ?
-				if (15 <= entrys.length) {
-					activitys += "\n\nさらに多くのチケットを更新しているので、詳細はRedmineを見てください。\nhttp://" + servername + "/" + contextpath + "/activity?user_id=" + userid;
-				}
 				copyTextToClipboard(activitys);
 			}
 
