@@ -14,6 +14,7 @@ function executeMailto(tab_id, subject, body, selection) {
 			(undefined == userid || '' == userid) ||
 			(undefined == mailto || '' == mailto)) {
 		alert("Please set the first initial.");
+		return;
 	}
 
 	var now = new Date();
